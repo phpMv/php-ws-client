@@ -1,0 +1,33 @@
+{
+  "name": "phpmv/php-ws-client",
+  "description": "A php library for creating a client Websocket",
+  "type": "library",
+  "keywords": [
+    "php",
+    "javascript",
+    "client",
+    "websocket"
+  ],
+  "require": {
+    "php": ">=8.0",
+    "phpmv/php-ui-common": "dev-main"
+  },
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Jean-Christophe HERON",
+      "email": "myaddressmail@gmail.com",
+      "role": "Lead developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+       "PHPMV\\": "src/PHPMV/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
