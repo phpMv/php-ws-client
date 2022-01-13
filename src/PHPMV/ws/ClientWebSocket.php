@@ -40,14 +40,14 @@ class ClientWebSocket {
 	}
 
 	public function send($data): string {
-		if (is_array($data) || is_object($data)) {
+		if (\is_array($data) || \is_object($data)) {
 			$data = JavascriptUtils::toJSON($data);
 		}
 		return $this->variableName . ".send('$data')";
 	}
 
 	public function compile(): string {
-		$constructor = sprintf('new WebSocket("%s",%s)', $this->url, \json_encode($this->protocols));
+		$constructor = \sprintf('new WebSocket("%s",%s)', $this->url, \json_encode($this->protocols));
 		$result = JavascriptUtils::declareVariable('let', $this->variableName, $constructor);
 		foreach ($this->events as $event => $jsCallback) {
 			$result .= $this->variableName . ".addEventListener('$event', " . JavascriptUtils::generateFunction($jsCallback, [
